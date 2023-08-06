@@ -29,7 +29,6 @@ const RegistrationScreen = () => {
     setIsShowKeybord(false);
     Keyboard.dismiss();
     console.log(formState);
-    setFormState(initialState);
   };
 
   return (
@@ -66,27 +65,11 @@ const RegistrationScreen = () => {
                   marginTop: isShowKeybord ? 16 : 32,
                 }}
               >
-                <View style={{ marginTop: isShowKeybord ? 10 : 16 }}>
-                  <TextInput
-                    style={styles.input}
-                    textAlign={"left"}
-                    placeholder="Логін"
-                    value={formState.login}
-                    onFocus={handleShowKeybord}
-                    onChangeText={(value) =>
-                      setFormState((prevState) => ({
-                        ...prevState,
-                        login: value,
-                      }))
-                    }
-                  ></TextInput>
-                </View>
                 <View style={{ marginTop: 16 }}>
                   <TextInput
                     style={styles.input}
                     textAlign={"left"}
                     placeholder="Адреса електронної пошти"
-                    value={formState.email}
                     onFocus={handleShowKeybord}
                     onChangeText={(value) =>
                       setFormState((prevState) => ({
@@ -102,7 +85,6 @@ const RegistrationScreen = () => {
                     textAlign={"left"}
                     placeholder="Пароль"
                     secureTextEntry={true}
-                    value={formState.password}
                     onFocus={handleShowKeybord}
                     onChangeText={(value) =>
                       setFormState((prevState) => ({
